@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chrono Agency | Живой сайт</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Background Animation -->
+    <div class="bg-animation" id="bgAnimation"></div>
+    
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="#" class="logo">
+                    <i class="fas fa-infinity logo-icon"></i>
+                    <span>Chrono</span>
+                </a>
+                
+                <div class="nav">
+                    <ul class="nav-list">
+                        <li><a href="#home">Главная</a></li>
+                        <li><a href="#services">Услуги</a></li>
+                        <li><a href="#portfolio">Работы</a></li>
+                        <li><a href="#team">Команда</a></li>
+                        <li><a href="#contact">Контакты</a></li>
+                    </ul>
+                    
+                    <div class="controls">
+                        <!-- Time of Day Switcher -->
+                        <div class="theme-switcher">
+                            <button class="theme-btn" data-theme="morning" title="Утро">
+                                <i class="fas fa-sun"></i>
+                            </button>
+                            <button class="theme-btn active" data-theme="day" title="День">
+                                <i class="fas fa-sun"></i>
+                            </button>
+                            <button class="theme-btn" data-theme="evening" title="Вечер">
+                                <i class="fas fa-moon"></i>
+                            </button>
+                            <button class="theme-btn" data-theme="night" title="Ночь">
+                                <i class="fas fa-star"></i>
+                            </button>
+                        </div>
+                        
+                        <!-- Mood Switcher -->
+                        <div class="mood-switcher">
+                            <button class="mood-btn" data-mood="peaceful" title="Умиротворение">
+                                <i class="fas fa-spa"></i>
+                            </button>
+                            <button class="mood-btn active" data-mood="energetic" title="Энергия">
+                                <i class="fas fa-bolt"></i>
+                            </button>
+                            <button class="mood-btn" data-mood="mysterious" title="Загадка">
+                                <i class="fas fa-magic"></i>
+                            </button>
+                        </div>
+                        
+                        <!-- Device Indicator -->
+                        <div class="device-indicator" id="deviceIndicator">
+                            <i class="fas fa-desktop"></i>
+                            <span>ПК</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <button class="burger" id="burgerBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="time-display" id="timeDisplay">
+                    <i class="fas fa-clock"></i>
+                    <span id="currentTime">--:--</span>
+                    <span class="time-label" id="timeLabel">День</span>
+                </div>
+                
+                <h1 id="dynamicTitle">Мы создаём <span class="highlight">живые</span> цифровые впечатления</h1>
+                <p>Наш сайт меняется в зависимости от времени суток, вашего устройства и настроения. Исследуйте все возможности!</p>
+                
+                <div class="hero-buttons">
+                    <a href="#services" class="btn btn-primary">
+                        <i class="fas fa-rocket"></i>
+                        Начать проект
+                    </a>
+                    <a href="#contact" class="btn btn-secondary">
+                        <i class="fas fa-comment-alt"></i>
+                        Связаться с нами
+                    </a>
+                </div>
+                
+                <div class="stats">
+                    <div class="stat-item">
+                        <span class="stat-number" id="projectsCount">0</span>
+                        <span class="stat-label">Проектов</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" id="clientsCount">0</span>
+                        <span class="stat-label">Клиентов</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" id="yearsCount">0</span>
+                        <span class="stat-label">Лет опыта</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="section services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Наши Услуги</h2>
+                <p>Мы предлагаем полный спектр услуг для создания уникальных цифровых продуктов</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3>Адаптивный Дизайн</h3>
+                    <p>Создаём дизайн, который идеально выглядит на любом устройстве и меняется в зависимости от контекста</p>
+                    <div class="service-features">
+                        <span><i class="fas fa-check"></i> Мобильная вёрстка</span>
+                        <span><i class="fas fa-check"></i> Адаптивные изображения</span>
+                        <span><i class="fas fa-check"></i> Контекстные изменения</span>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>Интерактивная Разработка</h3>
+                    <p>Внедряем интерактивные элементы, которые реагируют на действия пользователя и окружающую среду</p>
+                    <div class="service-features">
+                        <span><i class="fas fa-check"></i> Плавные анимации</span>
+                        <span><i class="fas fa-check"></i> Реакция на время суток</span>
+                        <span><i class="fas fa-check"></i> Динамический контент</span>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3>Эмоциональный UX</h3>
+                    <p>Проектируем интерфейсы, которые учитывают настроение пользователя и создают нужную атмосферу</p>
+                    <div class="service-features">
+                        <span><i class="fas fa-check"></i> Выбор настроения</span>
+                        <span><i class="fas fa-check"></i> Персонализированный опыт</span>
+                        <span><i class="fas fa-check"></i> Эмоциональный отклик</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="section portfolio">
+        <div class="container">
+            <div class="section-title">
+                <h2>Наши Работы</h2>
+                <p>Примеры проектов, которые меняются в зависимости от времени и контекста</p>
+            </div>
+            
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1558655146-364adaf1fcc9?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Динамический сайт" class="portfolio-img">
+                    <div class="portfolio-overlay">
+                        <h3>Хроно-Кофейня</h3>
+                        <p>Сайт меняет меню и атмосферу в зависимости от времени суток</p>
+                        <div class="portfolio-tags">
+                            <span>Адаптивный</span>
+                            <span>Динамический</span>
+                            <span>Интерактивный</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?ixlib=rb-1.2.1&auto=format&fit=crop&w-600&q=80" alt="Мобильное приложение" class="portfolio-img">
+                    <div class="portfolio-overlay">
+                        <h3>Настроение Погоды</h3>
+                        <p>Приложение, которое меняет интерфейс в зависимости от погоды и настроения</p>
+                        <div class="portfolio-tags">
+                            <span>Мобильное</span>
+                            <span>Контекстное</span>
+                            <span>Эмоциональное</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Корпоративный сайт" class="portfolio-img">
+                    <div class="portfolio-overlay">
+                        <h3>Живое Портфолио</h3>
+                        <p>Сайт-портфолио, который раскрывает разный контент на разных устройствах</p>
+                        <div class="portfolio-tags">
+                            <span>Адаптивный</span>
+                            <span>Умный</span>
+                            <span>Инновационный</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" class="section team">
+        <div class="container">
+            <div class="section-title">
+                <h2>Наша Команда</h2>
+                <p>Профессионалы, которые оживляют цифровые проекты</p>
+            </div>
+            
+            <div class="team-grid">
+                <div class="team-member">
+                    <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80" alt="Анна" class="team-avatar">
+                    <h3>Анна Миронова</h3>
+                    <div class="team-role">UX/UI Дизайнер</div>
+                    <p class="team-bio">Создаёт интерфейсы, которые чувствуют пользователя и адаптируются к нему</p>
+                    <div class="team-skills">
+                        <span>Адаптивный дизайн</span>
+                        <span>Эмоциональный UX</span>
+                        <span>Анимация</span>
+                    </div>
+                </div>
+                
+                <div class="team-member">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80" alt="Максим" class="team-avatar">
+                    <h3>Максим Волков</h3>
+                    <div class="team-role">Frontend Разработчик</div>
+                    <p class="team-bio">Превращает дизайн в живой код, который реагирует на окружение</p>
+                    <div class="team-skills">
+                        <span>JavaScript</span>
+                        <span>CSS Анимации</span>
+                        <span>API Интеграции</span>
+                    </div>
+                </div>
+                
+                <div class="team-member">
+                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80" alt="София" class="team-avatar">
+                    <h3>София Ковалёва</h3>
+                    <div class="team-role">Креативный Директор</div>
+                    <p class="team-bio">Придумывает концепции, которые оживляют бренды в цифровом пространстве</p>
+                    <div class="team-skills">
+                        <span>Стратегия</span>
+                        <span>Брендинг</span>
+                        <span>Креатив</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Свяжитесь с Нами</h2>
+                <p>Готовы создать живой проект вместе? Давайте обсудим!</p>
+            </div>
+            
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3><i class="fas fa-comments"></i> Давайте поговорим</h3>
+                    <p>Расскажите нам о вашем проекте, и мы создадим цифровой опыт, который будет жить и меняться вместе с вашим брендом.</p>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h4>Email</h4>
+                                <p>hello@chrono.agency</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <h4>Телефон</h4>
+                                <p>+7 (999) 123-45-67</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h4>Адрес</h4>
+                                <p>Москва, ул. Цифровая, 42</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" placeholder="Ваше имя" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <input type="email" placeholder="Ваш email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <textarea placeholder="Расскажите о вашем проекте..." rows="5" required></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Выберите настроение для проекта:</label>
+                            <div class="mood-selector">
+                                <button type="button" class="mood-option" data-mood="peaceful">
+                                    <i class="fas fa-spa"></i>
+                                    <span>Спокойное</span>
+                                </button>
+                                <button type="button" class="mood-option" data-mood="energetic">
+                                    <i class="fas fa-bolt"></i>
+                                    <span>Энергичное</span>
+                                </button>
+                                <button type="button" class="mood-option" data-mood="mysterious">
+                                    <i class="fas fa-magic"></i>
+                                    <span>Загадочное</span>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-paper-plane"></i>
+                            Отправить сообщение
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <a href="#" class="footer-logo">
+                        <i class="fas fa-infinity"></i>
+                        Chrono Agency
+                    </a>
+                    <p class="footer-description">Создаём живые цифровые впечатления, которые меняются и адаптируются</p>
+                    
+                    <div class="social-links">
+                        <a href="#" class="social-link" title="Telegram">
+                            <i class="fab fa-telegram"></i>
+                        </a>
+                        <a href="#" class="social-link" title="VK">
+                            <i class="fab fa-vk"></i>
+                        </a>
+                        <a href="#" class="social-link" title="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="#" class="social-link" title="Dribbble">
+                            <i class="fab fa-dribbble"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Навигация</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home">Главная</a></li>
+                        <li><a href="#services">Услуги</a></li>
+                        <li><a href="#portfolio">Работы</a></li>
+                        <li><a href="#team">Команда</a></li>
+                        <li><a href="#contact">Контакты</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Режимы</h3>
+                    <ul class="footer-links">
+                        <li><a href="#" class="change-theme" data-theme="morning">Утренний режим</a></li>
+                        <li><a href="#" class="change-theme" data-theme="day">Дневной режим</a></li>
+                        <li><a href="#" class="change-theme" data-theme="evening">Вечерний режим</a></li>
+                        <li><a href="#" class="change-theme" data-theme="night">Ночной режим</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Настроения</h3>
+                    <ul class="footer-links">
+                        <li><a href="#" class="change-mood" data-mood="peaceful">Умиротворённое</a></li>
+                        <li><a href="#" class="change-mood" data-mood="energetic">Энергичное</a></li>
+                        <li><a href="#" class="change-mood" data-mood="mysterious">Загадочное</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; <span id="currentYear"></span> Chrono Agency. Все права защищены.</p>
+                <p class="footer-note">Сайт адаптируется к вашему устройству, времени суток и настроению</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Audio Elements (Hidden) -->
+    <audio id="clickSound" src="https://assets.mixkit.co/sfx/preview/mixkit-select-click-1109.mp3" preload="auto"></audio>
+    <audio id="hoverSound" src="https://assets.mixkit.co/sfx/preview/mixkit-hover-click-1198.mp3" preload="auto"></audio>
+    <audio id="themeSound" src="https://assets.mixkit.co/sfx/preview/mixkit-magic-sparkles-300.mp3" preload="auto"></audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
